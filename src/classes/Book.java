@@ -31,6 +31,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Title: " + getTitle() + ", Author: " + getAuthor() + ", ISBN: " + getIsbn() + ", Price: $" + getPrice();
+        return String.format("Title: %s, Author: %s, ISBN: %s, Price: $%.2f",getTitle(),getAuthor(),getIsbn(),getPrice());
     }
 }

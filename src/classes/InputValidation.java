@@ -16,12 +16,28 @@ public class InputValidation {
 
             integer = Integer.parseInt(input);
             if (integer <= 0) System.out.print("Your input should be greater than zero. Please try again: ");
-
             else break;
         } catch (NumberFormatException e) {
             System.out.print("Invalid input. Please enter a valid number: ");
         }
         return integer;
+    }
+
+    public static float floatNumber(Scanner floatScanner){
+        float floatNum = 0.0F;
+        while (floatNum == 0) try{
+            String input = floatScanner.nextLine().trim();
+
+            if (!input.isEmpty()){
+                floatNum = Float.parseFloat(input);
+                if (floatNum <= 0) System.out.printf("%s: ", "Your input should be greater than zero. Please try again");
+                else break;
+            }
+            else System.out.printf("%s: ", "Please enter a valid float value:");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return floatNum;
     }
 
     public static String string(Scanner stringScanner, String regEx) {
